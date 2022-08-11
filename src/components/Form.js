@@ -1,5 +1,5 @@
 import React from 'react';
-import apiSearch from '../api/apiSearch';
+import searchApi from '../api/search/searchApi';
 
 
 const Form = ({searchType, token}) => {
@@ -8,10 +8,8 @@ const Form = ({searchType, token}) => {
     const handleSubmit = async(event) => {
         event.preventDefault();
         let entry = albumInput.current.value;
-        console.log(entry);
-        const retVal = await apiSearch(entry, searchType, token)
+        const retVal = await searchApi(entry, searchType, token)
         console.log(retVal);
-
     };
 
     
