@@ -9,10 +9,23 @@ import Add from './components/Add';
 function App() {
   const [token, setToken] = useState("");
   useToken(token, setToken);
+  let [albums, setAlbums] = useState({});
+  let [tracks, setTracks] = useState({});
+
+  // let globalGettersNsetters = {
+  //   albums, setAlbums, tracks, setTracks
+  // };
+
   return (
     <div >
       <Title key="0"/>
-      <Add key="1" token={token}/>
+      <Add 
+        key="1" 
+        globalGettersNsetters={{
+          albums, setAlbums, tracks, setTracks
+        }} 
+        token={token}
+        />
     </div>
   );
 }

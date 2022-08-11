@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import SearchBar from './SearchBar';
-import SearchResults from './SearchResults';
+import SearchResults from './SearchResults/SearchResults';
 
-const Search = ({token}) => {
+const Search = ({gettersNsetters, token}) => {
     let [results, setResults] = useState([]);
-    console.log(results);
+    // console.log(results);
     return (
         <div>
             <SearchBar setResults={setResults} token={token}/>
-            <SearchResults results={results}/>
+            <SearchResults results={results} gettersNsetters={gettersNsetters} token={token}/>
         </div>
     )
 }

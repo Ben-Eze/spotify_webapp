@@ -1,10 +1,27 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Search from './Search';
 
 
-const Add = ({token}) => {
+const Add = ({globalGettersNsetters, token}) => {
+    let [collections, setCollections] = useState({});
+
+    // console.log("boop", {
+    //     ...globalGettersNsetters, 
+    //     collections, 
+    //     setCollections
+    // });
+
+    // console.log(globalGettersNsetters, token);
+
     return (
-        <Search token={token}/>
+        <Search 
+            gettersNsetters={{
+                ...globalGettersNsetters, 
+                collections, 
+                setCollections
+            }} 
+            token={token}
+        />
     )
 };
 
