@@ -12,10 +12,10 @@ const urlSearch = async (entry, token) => {
   
   let {searchType, id} = separateSearch(entry);
 
-  return await apiGETdata(
+  return [await apiGETdata(
     `${searchType}s/${id}`,
     token
-  )
+  )]
 }
 
 export default urlSearch;
