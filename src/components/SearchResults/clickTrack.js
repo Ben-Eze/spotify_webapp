@@ -8,7 +8,6 @@ const clickTrack = async (
          tracks, setTracks},
         // token
     ) => {
-    console.log(track);
 
     if (track.id in tracks) {
         return
