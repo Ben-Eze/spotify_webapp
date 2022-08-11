@@ -1,0 +1,8 @@
+.scroll-menu {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scroll-menu .img-input {
+    height: 200px;
+}
