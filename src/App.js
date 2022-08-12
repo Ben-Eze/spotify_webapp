@@ -12,6 +12,9 @@ function App() {
   useToken(token, setToken);
   let [albums, setAlbums] = useState({});
   let [tracks, setTracks] = useState({});
+  const globalGettersNsetters = {
+    albums, setAlbums, tracks, setTracks
+  };
 
   return (
     <div >
@@ -19,14 +22,13 @@ function App() {
 
       <Add 
         key="app" 
-        globalGettersNsetters={{
-          albums, setAlbums, tracks, setTracks
-        }} 
+        globalGettersNsetters={globalGettersNsetters} 
         token={token}
       />
 
       <Analytics 
         key="analytics"
+        globalGettersNsetters={globalGettersNsetters}
       />
     </div>
   );
