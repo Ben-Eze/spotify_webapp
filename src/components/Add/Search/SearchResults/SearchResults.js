@@ -1,5 +1,5 @@
 import React from 'react';
-import ImageInput from '../ImageInput';
+import ImageInput from '../../ImageInput';
 import "./SearchResults.css";
 import clickAlbum from './clickAlbum';
 import clickPlaylist from './clickPlaylist';

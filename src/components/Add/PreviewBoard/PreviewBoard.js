@@ -1,7 +1,7 @@
 import React from 'react';
-import PreviewButtons from './PreviewButtons';
-import PreviewGrid from './PreviewGrid';
-import PreviewInfo from './PreviewInfo';
+import PreviewButtons from './PreviewButtons/PreviewButtons';
+import PreviewGrid from './PreviewGrid/PreviewGrid';
+import PreviewInfo from './PreviewInfo/PreviewInfo';
 
 const PreviewBoard = ({gettersNsetters}) => {
     return (

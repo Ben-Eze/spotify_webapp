@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import Search from './Search';
-import PreviewBoard from './PreviewBoard';
+import Search from './Search/Search';
+import PreviewBoard from './PreviewBoard/PreviewBoard';
 
 
 const Add = ({globalGettersNsetters, token}) => {

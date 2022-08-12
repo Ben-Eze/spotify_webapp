@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Form from './Form';
-import SearchButtons from "./SearchButtons"
+import Form from './Form/Form';
+import SearchButtons from "./SearchButtons/SearchButtons"
 
 const SearchBar = ({setResults, token}) => {
     let [searchType, setSearchType] = useState("album");

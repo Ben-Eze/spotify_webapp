@@ -1,5 +1,5 @@
 import React from 'react';
-import searchApi from '../api/search/searchApi';
+import searchApi from '../../../../../api/search/searchApi';
 
 
 const Form = ({setResults, searchType, token}) => {

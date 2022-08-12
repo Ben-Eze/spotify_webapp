@@ -1,4 +1,4 @@
-import getCollectionTracks from "../../api/getCollectionTracks";
+import getCollectionTracks from "../../../../api/getCollectionTracks";
 
 
 const clickPlaylist = async (
