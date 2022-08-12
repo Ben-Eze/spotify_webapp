@@ -20,7 +20,6 @@ const clickResult = (result, gettersNsetters, token) => {
         default:
             throw new Error(`result.type '${result.type}' not recognised`);
     }
-    console.log(gettersNsetters.collections);
 };
 
 
