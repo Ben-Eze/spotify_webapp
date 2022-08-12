@@ -3,7 +3,7 @@ import './App.css';
 
 import useToken from './api/useToken';
 
-import Title from './components/Title/Title';
+import Header from './components/Header/Header';
 import Add from './components/Add/Add';
 import Analytics from './components/Analytics/Analytics';
 
@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div >
-      <Title key="title"/>
+      <Header key="title"/>
 
       <Add 
         key="app" 

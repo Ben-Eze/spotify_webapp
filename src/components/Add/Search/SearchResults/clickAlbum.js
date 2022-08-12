@@ -22,7 +22,7 @@ const clickAlbum = async (
         ...tracks,
         ...Object.fromEntries(
             albumTracks.map(t => (
-                [t.id, t]
+                [t.id, {...t, album}]
             ))
         )
     })

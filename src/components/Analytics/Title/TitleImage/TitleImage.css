@@ -1,0 +1,9 @@
+.title-image {
+    display: inline;
+}
+
+.title-image img{
+    height: 300px;
+    width: 60px;
+    object-fit: cover;
+}

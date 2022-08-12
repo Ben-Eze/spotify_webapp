@@ -1,0 +1,4 @@
+.title p {
+    text-transform: capitalize;
+    display: inline;
+}

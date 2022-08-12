@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const Title = () => {
+const Header = () => {
     return (
         <h1>
             Spotify Webapp
@@ -9,4 +9,4 @@ const Title = () => {
     )
 }
 
-export default Title;
+export default Header;
