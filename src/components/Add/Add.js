@@ -19,7 +19,7 @@ const Add = ({activePage, setActivePage, globalGettersNsetters, token}) => {
             <Search 
                 gettersNsetters={gettersNsetters} 
                 token={token}
-            />,
+            />
             <PreviewBoard 
                 gettersNsetters={gettersNsetters}
                 setActivePage={setActivePage}

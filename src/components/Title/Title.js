@@ -2,11 +2,11 @@ import React from 'react';
 
 
 const Title = () => {
-    return React.createElement(
-        "h1",
-        null,
-        "Spotify Webapp"
-    );
+    return (
+        <h1>
+            Spotify Webapp
+        </h1>
+    )
 }
 
 export default Title;

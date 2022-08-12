@@ -6,8 +6,16 @@ const Search = ({gettersNsetters, token}) => {
     let [results, setResults] = useState([]);
     return (
         <div>
-            <SearchBar setResults={setResults} token={token}/>
-            <SearchResults results={results} gettersNsetters={gettersNsetters} token={token}/>
+            <SearchBar 
+                setResults={setResults} 
+                token={token}
+            />
+            
+            <SearchResults 
+                results={results} 
+                gettersNsetters={gettersNsetters} 
+                token={token}
+            />
         </div>
     )
 }

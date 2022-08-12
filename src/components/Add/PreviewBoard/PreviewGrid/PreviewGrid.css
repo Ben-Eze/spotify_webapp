@@ -1,3 +1,15 @@
-img {
-    height: 75px
+.preview-grid {
+    height: 300px;
+    width: 612px;
+    /* padding-right: 100px; */
+    overflow-x: auto;
+    background-color: blanchedalmond;
+}
+
+
+.preview-grid img {
+    vertical-align:top;
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
 }

@@ -10,7 +10,7 @@ const PreviewGrid = ({collections}) => {
                     src={c.images[0].url} 
                     key={i} 
                     alt={`collection ${i}`}
-                />
+                />             
             ))}
         </div>
     )
