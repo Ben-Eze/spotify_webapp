@@ -3,8 +3,9 @@ import './App.css';
 
 import useToken from './api/useToken';
 
-import Title from './components/Add/Title/Title';
+import Title from './components/Title/Title';
 import Add from './components/Add/Add';
+import Analytics from './components/Analytics/Analytics';
 
 function App() {
   const [token, setToken] = useState("");
@@ -12,20 +13,21 @@ function App() {
   let [albums, setAlbums] = useState({});
   let [tracks, setTracks] = useState({});
 
-  // let globalGettersNsetters = {
-  //   albums, setAlbums, tracks, setTracks
-  // };
-
   return (
     <div >
-      <Title key="0"/>
+      <Title key="title"/>
+
       <Add 
-        key="1" 
+        key="app" 
         globalGettersNsetters={{
           albums, setAlbums, tracks, setTracks
         }} 
         token={token}
-        />
+      />
+
+      <Analytics 
+        key="analytics"
+      />
     </div>
   );
 }
