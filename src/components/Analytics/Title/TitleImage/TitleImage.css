@@ -1,5 +1,8 @@
 .title-image {
-    display: inline;
+    /* display: inline; */
+    display: flex;
+    justify-content: center;
+    margin: 30px;
 }
 
 .title-image img{
