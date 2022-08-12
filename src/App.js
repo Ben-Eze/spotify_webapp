@@ -15,6 +15,7 @@ function App() {
   const globalGettersNsetters = {
     albums, setAlbums, tracks, setTracks
   };
+  const [activePage, setActivePage] = useState("add");
 
   return (
     <div >
@@ -22,12 +23,16 @@ function App() {
 
       <Add 
         key="app" 
+        activePage={activePage}
+        setActivePage={setActivePage}
         globalGettersNsetters={globalGettersNsetters} 
         token={token}
       />
 
       <Analytics 
         key="analytics"
+        activePage={activePage}
+        setActivePage={setActivePage}
         globalGettersNsetters={globalGettersNsetters}
       />
     </div>

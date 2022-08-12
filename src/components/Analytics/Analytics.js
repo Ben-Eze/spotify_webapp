@@ -1,11 +1,21 @@
 import React from 'react';
+import "./Analytics.css"
+import BackButton from './BackButton/BackButton';
 
 
-const Analytics = ({globalGettersNsetters}) => {
+const Analytics = ({activePage, setActivePage, globalGettersNsetters}) => {
+    let displayStyle = (activePage === "analytics") ? "block" : "none";
 
     return (
-        <div style={{backgroundColor: "#888"}}>
-            <h2 style={{textAlign: "center", marginTop: "50px"}}>analytics</h2>
+        <div 
+            className="analytics" 
+            style={{display: displayStyle}}
+        >
+            <BackButton 
+                setActivePage={setActivePage} 
+            />
+            
+            <h2>analytics</h2>
         </div>
     )
 };

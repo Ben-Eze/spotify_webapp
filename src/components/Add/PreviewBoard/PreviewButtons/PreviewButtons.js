@@ -1,28 +1,29 @@
 import React from 'react';
 
 
-const clear = ({setAlbums, setCollections, setTracks}) => {
+const clickClear = ({setAlbums, setCollections, setTracks}) => {
     setAlbums({});
     setCollections({});
     setTracks({});
 }
 
+const clickContinue = (setActivePage) => {
+    setActivePage("analytics");
+}
 
-const PreviewButtons = ({gettersNsetters}) => {
+
+const PreviewButtons = ({gettersNsetters, setActivePage}) => {
     return (
         <div>
             <button 
-                onClick={() => clear(gettersNsetters)} 
+                onClick={() => clickClear(gettersNsetters)} 
                 key="clear"
-            >
-                clear
-            </button>
+            >clear</button>
 
             <button 
                 key="continue"
-            >
-                continue
-            </button>
+                onClick={() => clickContinue(setActivePage)}
+            >continue</button>
         </div>
     )
 };

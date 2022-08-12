@@ -3,7 +3,7 @@ import Search from './Search/Search';
 import PreviewBoard from './PreviewBoard/PreviewBoard';
 
 
-const Add = ({globalGettersNsetters, token}) => {
+const Add = ({activePage, setActivePage, globalGettersNsetters, token}) => {
     let [collections, setCollections] = useState({});
     
     let gettersNsetters = {
@@ -12,14 +12,17 @@ const Add = ({globalGettersNsetters, token}) => {
         setCollections
     }
 
+    let displayStyle = (activePage === "add") ? "block" : "none";
+    
     return (
-        <div>
+        <div style={{display: displayStyle}}>
             <Search 
                 gettersNsetters={gettersNsetters} 
                 token={token}
             />,
             <PreviewBoard 
-                gettersNsetters={gettersNsetters} 
+                gettersNsetters={gettersNsetters}
+                setActivePage={setActivePage}
             />
         </div>
     )

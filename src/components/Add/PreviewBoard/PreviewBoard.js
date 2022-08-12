@@ -3,7 +3,7 @@ import PreviewButtons from './PreviewButtons/PreviewButtons';
 import PreviewGrid from './PreviewGrid/PreviewGrid';
 import PreviewInfo from './PreviewInfo/PreviewInfo';
 
-const PreviewBoard = ({gettersNsetters}) => {
+const PreviewBoard = ({setActivePage, gettersNsetters}) => {
     return (
         <div>
             <PreviewInfo 
@@ -17,6 +17,7 @@ const PreviewBoard = ({gettersNsetters}) => {
 
             <PreviewButtons 
                 gettersNsetters={gettersNsetters}
+                setActivePage={setActivePage}
             />
         </div>
     );
