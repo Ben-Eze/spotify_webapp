@@ -5,7 +5,7 @@ const Title = () => {
     return React.createElement(
         "h1",
         null,
-        "Demo Spotify API:"
+        "Spotify Webapp"
     );
 }
 

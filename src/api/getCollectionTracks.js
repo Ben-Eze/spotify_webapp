@@ -9,7 +9,11 @@ const getCollectionTracks = async (collectionType, id, token) => {
         `${collectionType}s/${id}/tracks`,
         token
     );
-
+    
+    if (collectionType === "playlist"){
+        return data.items.filter(i => i.track != null);
+    }
+    console.log(data.items);
     return data.items;
 }
 

@@ -1,10 +1,23 @@
 import React from 'react';
+import PreviewButtons from './PreviewButtons';
 import PreviewGrid from './PreviewGrid';
+import PreviewInfo from './PreviewInfo';
 
-const PreviewBoard = () => {
+const PreviewBoard = ({gettersNsetters}) => {
     return (
         <div>
-            <PreviewGrid/>
+            <PreviewInfo 
+                albums={gettersNsetters.albums} 
+                tracks={gettersNsetters.tracks}
+            />
+
+            <PreviewGrid 
+                collections={gettersNsetters.collections}
+            />
+
+            <PreviewButtons 
+                gettersNsetters={gettersNsetters}
+            />
         </div>
     );
 }

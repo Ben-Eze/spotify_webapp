@@ -18,8 +18,13 @@ const clickAlbum = async (
         token
     );
 
-    albumTracks.forEach(t => {
-        setTracks({...tracks, [t.id]: t})
+    setTracks({
+        ...tracks,
+        ...Object.fromEntries(
+            albumTracks.map(t => (
+                [t.id, t]
+            ))
+        )
     })
 };
 

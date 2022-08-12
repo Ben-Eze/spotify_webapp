@@ -5,18 +5,22 @@ import PreviewBoard from './PreviewBoard';
 
 const Add = ({globalGettersNsetters, token}) => {
     let [collections, setCollections] = useState({});
+    
+    let gettersNsetters = {
+        ...globalGettersNsetters, 
+        collections, 
+        setCollections
+    }
 
     return (
         <div>
             <Search 
-                gettersNsetters={{
-                    ...globalGettersNsetters, 
-                    collections, 
-                    setCollections
-                }} 
+                gettersNsetters={gettersNsetters} 
                 token={token}
             />,
-            <PreviewBoard />
+            <PreviewBoard 
+                gettersNsetters={gettersNsetters} 
+            />
         </div>
     )
 };

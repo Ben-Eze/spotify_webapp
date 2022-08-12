@@ -9,18 +9,48 @@ const clickPlaylist = async (
         token
     ) => {
 
-    setCollections({...collections, [playlist.id]: playlist});
+    setCollections({
+        ...collections, [playlist.id]: playlist}
+    );
     
     let playlistTracks = await getCollectionTracks(
         "playlist",
         playlist.id,
         token
     );
-        
-    playlistTracks.forEach(t => {
-        setAlbums({...albums, [t.track.album.id]: t.track.album});
-        setTracks({...tracks, [t.track.id]: t})
+
+    setAlbums({
+        ...albums, 
+        ...Object.fromEntries(
+            playlistTracks.map(t => (
+                [t.track.album.id, t.track.album]
+            ))
+        )
     })
+    
+    setTracks({
+        ...tracks,
+        ...Object.fromEntries(
+            playlistTracks.map(t => (
+                [t.track.id, t.track]
+            ))
+        )
+    })
+
+    
+
+    // TODO:::::::::::::::::::::
+    // do the above for all clickXXX
+
+
+
+        
+    // playlistTracks.forEach((t, i) => {
+    //     setAlbums({...albums, [t.track.album.id]: t.track.album});
+    //     setTracks({...tracks, [t.track.id]: t})
+    //     // setTracks(Object.assign(tracks, {c: 3}){...tracks, [t.track.id]: t})
+    //     console.log({...tracks, [t.track.id]: t})
+    // })
 };
 
 export default clickPlaylist;
