@@ -10,6 +10,7 @@ const ImageInput = ({url, onClick, alt=""}) => (
         src={url} 
         alt={alt}
         onClick={onClick}
+        draggable="false"
     />
 );
 

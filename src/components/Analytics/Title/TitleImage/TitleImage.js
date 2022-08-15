@@ -14,6 +14,7 @@ const TitleImage = ({tracks, albums}) => {
                     src={url}
                     alt={`title img component ${i}`}
                     key={i}
+                    draggable="false"
                 />
             ))}
         </div>
