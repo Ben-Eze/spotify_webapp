@@ -1,13 +1,10 @@
-// import getCollectionTracks from "../../api/getCollectionTracks";
-
-
 const clickTrack = async (
-        track, 
-        {collections, setCollections, 
-         albums, setAlbums, 
-         tracks, setTracks},
-        // token
-    ) => {
+    track,
+    {
+        collections, setCollections, 
+        albums, setAlbums, 
+        tracks, setTracks
+    }) => {
 
     if (track.id in tracks) {
         return

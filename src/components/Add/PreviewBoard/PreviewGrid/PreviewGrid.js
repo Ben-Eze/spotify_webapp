@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../../Context';
 import "./PreviewGrid.css";
 
 
-const PreviewGrid = ({collections}) => {
+const PreviewGrid = () => {
+    let {collections} = useContext(Context);
     return (
         <div className='preview-grid'>
             {Object.values(collections).map((c, i) => (

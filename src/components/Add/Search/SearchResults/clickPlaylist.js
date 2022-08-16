@@ -2,11 +2,13 @@ import getCollectionTracks from "../../../../api/getCollectionTracks";
 
 
 const clickPlaylist = async (
-        playlist, 
-        {collections, setCollections, 
-         albums, setAlbums, 
-         tracks, setTracks},
-        token
+    playlist, 
+    {
+        collections, setCollections, 
+        albums, setAlbums, 
+        tracks, setTracks,
+    },
+    token
     ) => {
 
     setCollections({
@@ -36,21 +38,6 @@ const clickPlaylist = async (
             ))
         )
     })
-
-    
-
-    // TODO:::::::::::::::::::::
-    // do the above for all clickXXX
-
-
-
-        
-    // playlistTracks.forEach((t, i) => {
-    //     setAlbums({...albums, [t.track.album.id]: t.track.album});
-    //     setTracks({...tracks, [t.track.id]: t})
-    //     // setTracks(Object.assign(tracks, {c: 3}){...tracks, [t.track.id]: t})
-    //     console.log({...tracks, [t.track.id]: t})
-    // })
 };
 
 export default clickPlaylist;

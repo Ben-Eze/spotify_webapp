@@ -1,7 +1,8 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../../Context';
 
 
-const clickClear = ({setAlbums, setCollections, setTracks}) => {
+const clickClear = (setAlbums, setCollections, setTracks) => {
     setAlbums({});
     setCollections({});
     setTracks({});
@@ -11,12 +12,12 @@ const clickContinue = (setActivePage) => {
     setActivePage("analytics");
 }
 
-
-const PreviewButtons = ({gettersNsetters, setActivePage}) => {
+const PreviewButtons = () => {
+    let {setAlbums, setCollections, setTracks, setActivePage} = useContext(Context)
     return (
         <div>
             <button 
-                onClick={() => clickClear(gettersNsetters)} 
+                onClick={() => clickClear(setAlbums, setCollections, setTracks)} 
                 key="clear"
             >clear</button>
 

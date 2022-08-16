@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../../Context';
 import getTopAlbums from './getTopAlbums';
 import "./TitleImage.css"
 
 
-const TitleImage = ({tracks, albums}) => {
+const TitleImage = () => {
+    let {tracks, albums} = useContext(Context);
     let topAlbums = getTopAlbums(tracks, albums);
     let urls = topAlbums.map(a => a.images[0].url);
 

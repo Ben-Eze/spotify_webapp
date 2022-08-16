@@ -2,13 +2,17 @@ import getCollectionTracks from "../../../../api/getCollectionTracks";
 
 
 const clickAlbum = async (
-        album, 
-        {collections, setCollections, 
-         albums, setAlbums, 
-         tracks, setTracks},
-        token
+    album, 
+    gettersNsetters,
+    token
     ) => {
-
+    
+    console.log(gettersNsetters);
+    let {
+        collections, setCollections,
+        albums, setAlbums, 
+        tracks, setTracks, 
+    } = gettersNsetters;
     setCollections({...collections, [album.id]: album});
     setAlbums({...albums, [album.id]: album});
     
@@ -20,7 +24,7 @@ const clickAlbum = async (
 
     setTracks({
         ...tracks,
-        ...Object.fromEntries(
+        ...Object.fromEntries(         
             albumTracks.map(t => (
                 [t.id, {...t, album}]
             ))

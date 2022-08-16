@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../../Context';
 import ImageInput from './ImageInput';
 import "./SearchResults.css";
 import clickAlbum from './clickAlbum';
@@ -30,13 +31,30 @@ const getImgURL = (result) => {
     return result.images[0].url;
 }
 
-const SearchResults = ({results, gettersNsetters, token}) => {
+const SearchResults = ({results}) => {
+    let {
+        collections, setCollections,
+        albums, setAlbums, 
+        tracks, setTracks, 
+        token
+    } = useContext(Context);
+    
+    let handleClick = (r) => {
+        clickResult(
+            r, 
+            {collections, setCollections,
+            albums, setAlbums, 
+            tracks, setTracks}, 
+            token
+        )
+    }
+
     return (
         <div className="scroll-menu">
             {results.map((r, i) => (
                 <ImageInput 
                     url={getImgURL(r)}
-                    onClick={() => clickResult(r, gettersNsetters, token)}
+                    onClick={() => handleClick(r)}
                     key={i}
                 />
             ))}

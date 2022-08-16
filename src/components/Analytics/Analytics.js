@@ -1,26 +1,17 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../Context';
 import "./Analytics.css"
 import BackButton from './BackButton/BackButton';
 import Title from './Title/Title';
 
 
-const Analytics = ({activePage, setActivePage, globalGettersNsetters}) => {
-    // let displayStyle = (activePage === "analytics") ? "block" : "none";
+const Analytics = () => {
+    let {activePage} = useContext(Context);
 
     let content = (
-        <div 
-            className="analytics" 
-            // style={{display: displayStyle}}
-        >
-            <BackButton 
-                setActivePage={setActivePage} 
-            />
-
-            <Title 
-                tracks={globalGettersNsetters.tracks}
-                albums={globalGettersNsetters.albums}
-            />
-            
+        <div className="analytics">
+            <BackButton/>
+            <Title/>
             <h2>analytics</h2>
         </div>
     )

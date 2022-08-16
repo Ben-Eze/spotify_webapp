@@ -3,7 +3,7 @@ import TitleImage from './TitleImage/TitleImage';
 import "./Title.css"
 
 
-const Title = ({tracks, albums}) => {
+const Title = () => {
     
     return (
         <div className='title'>
@@ -11,7 +11,7 @@ const Title = ({tracks, albums}) => {
                 learn more about your music
             </p>
 
-            <TitleImage tracks={tracks} albums={albums} />
+            <TitleImage/>
         </div>
     )
 }

@@ -1,8 +1,10 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../../Context';
 import "./PreviewInfo.css";
 
 
-const PreviewInfo = ({tracks, albums}) => {
+const PreviewInfo = () => {
+    let {tracks, albums} = useContext(Context);
     let nAlbums = Object.keys(albums).length;
     let nTracks = Object.keys(tracks).length;
     const addMoreMessage = (nTracks < 5) ? `Add songs from at least ${5 - nTracks} more albums to continue` : "";

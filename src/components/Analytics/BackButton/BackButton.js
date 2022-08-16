@@ -1,4 +1,5 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from '../../../Context';
 
 
 const clickBack = (setActivePage) => {
@@ -6,12 +7,11 @@ const clickBack = (setActivePage) => {
 }
 
 
-const BackButton = ({setActivePage}) => {
+const BackButton = () => {
+    let {setActivePage} = useContext(Context);
 
     return (
-        <button
-            onClick={() => clickBack(setActivePage)}    
-        >
+        <button onClick={() => clickBack(setActivePage)}>
             back
         </button>
     )
