@@ -13,7 +13,9 @@ const clickContinue = (setActivePage) => {
 }
 
 const PreviewButtons = () => {
-    let {setAlbums, setCollections, setTracks, setActivePage} = useContext(Context)
+    let {albums, setAlbums, setCollections, setTracks, setActivePage} = useContext(Context);
+    let continueDisplayStyle = (Object.keys(albums).length < 5) ? "none" : "inline";
+
     return (
         <div>
             <button 
@@ -24,6 +26,7 @@ const PreviewButtons = () => {
             <button 
                 key="continue"
                 onClick={() => clickContinue(setActivePage)}
+                style={{display: continueDisplayStyle}}
             >continue</button>
         </div>
     )
