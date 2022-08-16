@@ -3,6 +3,9 @@
 # plan
 /design
 
+# test files
+text.json
+
 # dependencies
 /node_modules
 /.pnp
