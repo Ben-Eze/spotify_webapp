@@ -13,7 +13,6 @@ const getCollectionTracks = async (collectionType, id, token) => {
     if (collectionType === "playlist"){
         return data.items.filter(i => i.track != null);
     }
-    console.log(data.items);
     return data.items;
 }
 

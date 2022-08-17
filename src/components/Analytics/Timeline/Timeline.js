@@ -1,15 +1,14 @@
 import React, {useContext} from 'react';
 import Context from '../../../Context';
 import formatDates from './formatDates';
+import TimelineChart from './TimelineChart/TimelineChart';
 
 const Timeline = () => {
     let {tracks} = useContext(Context);
-    let dates = formatDates(tracks);
+    let datePoints = formatDates(tracks);
 
     return (
-        <div>
-
-        </div>
+        <TimelineChart points={datePoints}/>
     )
 }
 
