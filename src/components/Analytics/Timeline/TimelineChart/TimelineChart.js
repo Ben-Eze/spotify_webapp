@@ -21,8 +21,6 @@ function TimelineChart({points}) {
   )
  
   const lineChart = (
-    // A react-chart hyper-responsively and continuously fills the available
-    // space of its parent element automatically
     <div
       style={{
         width: '400px',

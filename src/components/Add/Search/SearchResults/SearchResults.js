@@ -25,10 +25,8 @@ const clickResult = (result, gettersNsetters, token) => {
 
 
 const getImgURL = (result) => {
-    if (result.type === "track") {
-        return result.album.images[0].url;
-    }
-    return result.images[0].url;
+    let images = (result.type === "track") ? result.album.images : result.images;
+    return images[0].url;
 }
 
 const SearchResults = ({results}) => {

@@ -1,4 +1,5 @@
 import apiGETdata from "../apiGETdata";
+import filterUnavailable from "./filterUnavailable";
 
 const searchAlbumPlaylistTrack = async (entry, searchType, token) => {
     // TODO: ERROR MESSAGES
@@ -12,6 +13,8 @@ const searchAlbumPlaylistTrack = async (entry, searchType, token) => {
             case "album":
                 return data.albums.items;
             case "playlist":
+                console.log(data.playlists.items);
+                console.log(data.playlists.items.map(p => filterUnavailable(p)));
                 return data.playlists.items;
             case "track":
                 return data.tracks.items;

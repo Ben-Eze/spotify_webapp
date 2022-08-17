@@ -6,8 +6,8 @@ const apiGETdata = async (subURL, token) => {
             headers: { 'Authorization' : 'Bearer ' + token}
         }
       );
-    
-      return await result.json();
+        
+    return await result.json();
 }
 
 

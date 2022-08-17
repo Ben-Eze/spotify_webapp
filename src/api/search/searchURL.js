@@ -1,5 +1,6 @@
 import urlHelpers from "./urlHelpers";
 import apiGETdata from "../apiGETdata";
+import filterUnavailable from "./filterUnavailable";
 
 const {removeHttps, removeOpenSpotify, separateSearch} = urlHelpers;
 
@@ -12,10 +13,12 @@ const urlSearch = async (entry, token) => {
   
   let {searchType, id} = separateSearch(entry);
 
-  return [await apiGETdata(
+  let data = await apiGETdata(
     `${searchType}s/${id}`,
     token
-  )]
+  )
+
+  return [filterUnavailable(data)].filter(x => x);
 }
 
 export default urlSearch;

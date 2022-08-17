@@ -11,20 +11,24 @@ const clickPlaylist = async (
     token
     ) => {
 
+    console.log(playlist);
+
     setCollections({
         ...collections, [playlist.id]: playlist}
     );
     
-    let playlistTracks = await getCollectionTracks(
-        "playlist",
-        playlist.id,
-        token
-    );
+    // let playlistTracks = await getCollectionTracks(
+    //     "playlist",
+    //     playlist.id,
+    //     token
+    // );
+
+    // let playlistTracks = 
 
     setAlbums({
         ...albums, 
         ...Object.fromEntries(
-            playlistTracks.map(t => (
+            playlist.tracks.items.map(t => (
                 [t.track.album.id, t.track.album]
             ))
         )
@@ -33,7 +37,7 @@ const clickPlaylist = async (
     setTracks({
         ...tracks,
         ...Object.fromEntries(
-            playlistTracks.map(t => (
+            playlist.tracks.items.map(t => (
                 [t.track.id, t.track]
             ))
         )
