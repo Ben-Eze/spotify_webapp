@@ -1,5 +1,5 @@
-import getCollectionTracks from "../../../../api/getCollectionTracks";
-import filterUnavailable from "./filterUnavailable";
+import getCollectionTracks from "../../../../../api/getCollectionTracks";
+import filterUnavailable from "../../filterUnavailable";
 
 
 const clickPlaylist = async (
