@@ -13,12 +13,12 @@ const urlSearch = async (entry, token) => {
   
   let {searchType, id} = separateSearch(entry);
 
-  let data = await apiGETdata(
+  let urlSearchData = await apiGETdata(
     `${searchType}s/${id}`,
     token
   )
 
-  return [filterUnavailable(data)].filter(x => x);
+  return [urlSearchData];
 }
 
 export default urlSearch;

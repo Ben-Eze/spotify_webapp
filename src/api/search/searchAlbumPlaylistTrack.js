@@ -13,8 +13,6 @@ const searchAlbumPlaylistTrack = async (entry, searchType, token) => {
             case "album":
                 return data.albums.items;
             case "playlist":
-                console.log(data.playlists.items);
-                console.log(data.playlists.items.map(p => filterUnavailable(p)));
                 return data.playlists.items;
             case "track":
                 return data.tracks.items;

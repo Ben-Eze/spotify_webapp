@@ -1,4 +1,5 @@
 import getCollectionTracks from "../../../../api/getCollectionTracks";
+import filterUnavailable from "./filterUnavailable";
 
 
 const clickPlaylist = async (
@@ -10,26 +11,25 @@ const clickPlaylist = async (
     },
     token
     ) => {
-
-    console.log(playlist);
-
     setCollections({
         ...collections, [playlist.id]: playlist}
     );
     
-    // let playlistTracks = await getCollectionTracks(
-    //     "playlist",
-    //     playlist.id,
-    //     token
-    // );
+    if (playlist.tracks.items == null){
+        playlist.tracks.items = await getCollectionTracks(
+            "playlist",
+            playlist.id,
+            token
+        )
+    }
 
-    // let playlistTracks = 
+    let filteredPlaylist = filterUnavailable(playlist);
 
     setAlbums({
         ...albums, 
         ...Object.fromEntries(
-            playlist.tracks.items.map(t => (
-                [t.track.album.id, t.track.album]
+            filteredPlaylist.tracks.items.map(i => (
+                [i.track.album.id, i.track.album]
             ))
         )
     })
@@ -37,8 +37,8 @@ const clickPlaylist = async (
     setTracks({
         ...tracks,
         ...Object.fromEntries(
-            playlist.tracks.items.map(t => (
-                [t.track.id, t.track]
+            filteredPlaylist.tracks.items.map(i => (
+                [i.track.id, i.track]
             ))
         )
     })
