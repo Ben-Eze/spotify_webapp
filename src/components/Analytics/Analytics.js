@@ -2,6 +2,7 @@ import React, {useContext} from 'react';
 import Context from '../../Context';
 import "./Analytics.css"
 import BackButton from './BackButton/BackButton';
+import Timeline from './Timeline/Timeline';
 import Title from './Title/Title';
 
 
@@ -13,6 +14,7 @@ const Analytics = () => {
             <BackButton/>
             <Title/>
             <h2>analytics</h2>
+            <Timeline />
         </div>
     )
 
