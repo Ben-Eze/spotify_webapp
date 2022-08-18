@@ -11,9 +11,8 @@ const clickPlaylist = async (
     },
     token
     ) => {
-    setCollections({
-        ...collections, [playlist.id]: playlist}
-    );
+
+    setCollections({...collections, [playlist.id]: playlist});
     
     if (playlist.tracks.items == null){
         playlist.tracks.items = await getCollectionTracks(
