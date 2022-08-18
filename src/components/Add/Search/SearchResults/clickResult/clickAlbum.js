@@ -13,14 +13,15 @@ const clickAlbum = async (
     
     setCollections({...collections, [album.id]: album});
     setAlbums({...albums, [album.id]: album});
-    
-    // console.log(album);
 
-    let albumTracks = await getCollectionTracks(
-        "album",
-        album.id,
-        token
-    );
+    let albumTracks = (
+        album.tracks == null 
+        || album.tracks.total > album.tracks.limit
+        ) ? await getCollectionTracks(
+            "album",
+            album.id,
+            token
+        ) : album.tracks.items
 
     setTracks({
         ...tracks,

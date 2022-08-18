@@ -13,8 +13,9 @@ const clickPlaylist = async (
     ) => {
 
     setCollections({...collections, [playlist.id]: playlist});
-    
-    if (playlist.tracks.items == null){
+
+    if (playlist.tracks.items == null 
+        || playlist.tracks.total > playlist.tracks.limit){
         playlist.tracks.items = await getCollectionTracks(
             "playlist",
             playlist.id,
