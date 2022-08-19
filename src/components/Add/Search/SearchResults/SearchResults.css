@@ -1,6 +1,8 @@
 .scroll-menu {
     overflow: auto;
     white-space: nowrap;
+    height: 169px;
+    background-color: blanchedalmond;
 }
 
 .scroll-menu .img-input {

@@ -1,3 +1,14 @@
+.App {
+  padding: 20px;
+  /* background-color: pink; */
+  background-image: radial-gradient(#1ca4075b 20%, transparent 20%),
+      radial-gradient(#00000044 20%, transparent 20%);
+  background-color: rgba(255, 235, 205, 0.494);
+  background-position: 0 0, 30px 30px;
+  background-size: 100px 100px;
+  height: 100%;
+}
+
 /* .App {
   text-align: center;
 }

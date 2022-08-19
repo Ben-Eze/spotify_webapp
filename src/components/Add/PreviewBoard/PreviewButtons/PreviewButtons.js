@@ -1,6 +1,7 @@
 import React, {useContext} from 'react';
 import Context from '../../../../Context';
 import getAudioFeatures from '../../../../api/getAudioFeatures';
+import "./PreviewButtons.css"
 
 
 const clickClear = (setAlbums, setCollections, setTracks) => {
@@ -21,11 +22,13 @@ const PreviewButtons = () => {
     return (
         <div>
             <button 
+                className='preview-button'
                 onClick={() => clickClear(setAlbums, setCollections, setTracks)} 
                 key="clear"
             >clear</button>
 
             <button 
+                className='preview-button'
                 key="continue"
                 onClick={() => clickContinue(setActivePage, tracks, token, setAudioFeatures)}
                 style={{display: continueDisplayStyle}}

@@ -1,15 +1,18 @@
 import React from 'react';
+import "./SearchButtons.css"
 
 
-const SearchButtons = ({setSearchType}) => {
+const SearchButtons = ({setSearchType, colourObj}) => {
     return (
         ["album", "playlist", "track", "url"].map(
-            (x, i) => (
+            (searchType, i) => (
                 <button 
-                    onClick={() => {setSearchType(x)}}
+                    onClick={() => {setSearchType(searchType)}}
                     key={i}
+                    className="search-type-button"
+                    style={{backgroundColor: colourObj[searchType]}}
                 >
-                        {x}
+                        {searchType}
                 </button>
             ))
     )

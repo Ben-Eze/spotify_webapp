@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import Context from '../../../Context';
+import "./BackButton.css"
 
 
 const clickBack = (setActivePage) => {
@@ -11,7 +12,10 @@ const BackButton = () => {
     let {setActivePage} = useContext(Context);
 
     return (
-        <button onClick={() => clickBack(setActivePage)}>
+        <button 
+            className='back-button'
+            onClick={() => clickBack(setActivePage)}
+        >
             back
         </button>
     )

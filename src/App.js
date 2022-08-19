@@ -8,7 +8,7 @@ import Analytics from './components/Analytics/Analytics';
 
 function App() {
   return (
-    <div>
+    <div className='App'>
       <ContextProvider>
         <Header key="title"/>
         <Add key="app"/>
