@@ -1,5 +1,6 @@
 import React, {useContext} from 'react';
 import Context from '../../../../Context';
+import getAudioFeatures from '../../../../api/getAudioFeatures';
 
 
 const clickClear = (setAlbums, setCollections, setTracks) => {
@@ -8,12 +9,13 @@ const clickClear = (setAlbums, setCollections, setTracks) => {
     setTracks({});
 }
 
-const clickContinue = (setActivePage) => {
+const clickContinue = (setActivePage, tracks, token, setAudioFeatures) => {
     setActivePage("analytics");
+    getAudioFeatures(tracks, token, setAudioFeatures);
 }
 
 const PreviewButtons = () => {
-    let {albums, setAlbums, setCollections, setTracks, setActivePage} = useContext(Context);
+    let {albums, setAlbums, setCollections, setTracks, setActivePage, tracks, token, setAudioFeatures} = useContext(Context);
     let continueDisplayStyle = (Object.keys(albums).length < 5) ? "none" : "inline";
 
     return (
@@ -25,7 +27,7 @@ const PreviewButtons = () => {
 
             <button 
                 key="continue"
-                onClick={() => clickContinue(setActivePage)}
+                onClick={() => clickContinue(setActivePage, tracks, token, setAudioFeatures)}
                 style={{display: continueDisplayStyle}}
             >continue</button>
         </div>

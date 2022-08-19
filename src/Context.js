@@ -11,6 +11,7 @@ export const ContextProvider = ({children}) => {
     let [tracks, setTracks] = useState({});
     let [collections, setCollections] = useState({});
     let [activePage, setActivePage] = useState("add");
+    let [audioFeatures, setAudioFeatures] = useState([]);
 
     return (
         <Context.Provider 
@@ -19,7 +20,8 @@ export const ContextProvider = ({children}) => {
                 albums, setAlbums,
                 tracks, setTracks,
                 collections, setCollections,
-                activePage, setActivePage
+                activePage, setActivePage,
+                audioFeatures, setAudioFeatures
             }} 
         >
             {children}

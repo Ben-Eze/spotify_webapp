@@ -4,6 +4,7 @@ import "./Analytics.css"
 import BackButton from './BackButton/BackButton';
 import Timeline from './Timeline/Timeline';
 import Title from './Title/Title';
+import TrackStats from './TrackStats/TrackStats';
 
 
 const Analytics = () => {
@@ -15,6 +16,7 @@ const Analytics = () => {
             <Title/>
             <h2>analytics</h2>
             <Timeline />
+            <TrackStats />
         </div>
     )
 
