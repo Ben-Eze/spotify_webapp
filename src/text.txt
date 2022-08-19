@@ -1,3 +1,8 @@
-! react context api (global variables)
+react context api (global variables) - DONE
 use reduce (same pattern as redux)
 bem naming convention (block element modifier)
+
+next js free hosting
+vercel
+flexbox/grid
+bulma
